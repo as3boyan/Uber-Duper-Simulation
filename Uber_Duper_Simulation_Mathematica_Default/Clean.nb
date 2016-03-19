@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16985,        465]
-NotebookOptionsPosition[     16007,        431]
-NotebookOutlinePosition[     16354,        446]
-CellTagsIndexPosition[     16311,        443]
+NotebookDataLength[     16430,        451]
+NotebookOptionsPosition[     15285,        412]
+NotebookOutlinePosition[     15799,        432]
+CellTagsIndexPosition[     15756,        429]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -85,20 +85,19 @@ Cell[BoxData[{
      RowBox[{"1", "/", "3"}], ",", 
      RowBox[{"1", "/", "6"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"crkcvec", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "/", "2"}], ",", 
+     RowBox[{"1", "/", "2"}], ",", "1"}], "}"}]}], ";", 
   RowBox[{
-   RowBox[{"crkcvec", "=", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"1", "/", "2"}], ",", 
-      RowBox[{"1", "/", "2"}], ",", "1"}], "}"}]}], ";", 
-   RowBox[{
-    RowBox[{"ClassicalRungeKuttaCoefficients", "[", 
-     RowBox[{"4", ",", "p_"}], "]"}], ":=", 
-    RowBox[{"N", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"crkamat", ",", "crkbvec", ",", "crkcvec"}], "}"}], ",", "p"}],
-      "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+   RowBox[{"ClassicalRungeKuttaCoefficients", "[", 
+    RowBox[{"4", ",", "p_"}], "]"}], ":=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"crkamat", ",", "crkbvec", ",", "crkcvec"}], "}"}], ",", "p"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -156,7 +155,6 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"Vy", "[", "0", "]"}], "\[Equal]", "0"}]}], 
          "\[IndentingNewLine]", "}"}]}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
        RowBox[{"solution", " ", ":=", " ", 
         RowBox[{"If", "[", 
          RowBox[{"rungeKutta4", ",", " ", "\[IndentingNewLine]", 
@@ -177,7 +175,6 @@ Cell[BoxData[{
                  "ClassicalRungeKuttaCoefficients"}]}], "}"}]}], ",", " ", 
              RowBox[{"StartingStepSize", "\[Rule]", "tStep"}]}], "]"}]}], 
           "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", 
           RowBox[{"First", "@", 
            RowBox[{"NDSolve", "[", "\[IndentingNewLine]", 
             RowBox[{"system", ",", 
@@ -188,24 +185,8 @@ Cell[BoxData[{
               RowBox[{"t", ",", " ", "0", ",", " ", "10000"}], "}"}], ",", 
              " ", 
              RowBox[{"PrecisionGoal", "\[Rule]", "10"}]}], 
-            "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
-         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"Print", "[", "solution", "]"}], ";"}], "*)"}], 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"For", "[", 
-          RowBox[{
-           RowBox[{"j", "=", "1"}], ",", 
-           RowBox[{"j", "<", "100"}], ",", 
-           RowBox[{"j", "++"}], ",", 
-           RowBox[{"Print", "[", 
-            RowBox[{"table", "[", 
-             RowBox[{"[", "j", "]"}], "]"}], "]"}]}], "]"}], ";"}], "*)"}], 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+       ";", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{"{", 
          RowBox[{"Vx1", ",", " ", "Vy1", ",", " ", "x1", ",", " ", "y1"}], 
@@ -214,7 +195,6 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{"Vx", ",", "Vy", ",", "x", ",", "y"}], "}"}], "/.", 
          "\[VeryThinSpace]", "solution"}]}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
        RowBox[{"Print", "[", 
         RowBox[{
          RowBox[{"Vx1", "[", 
@@ -355,7 +335,8 @@ Cell[BoxData[{
    3.665983438270052*^9, 3.665983461716393*^9}, 3.6659835692165413`*^9, 
    3.6659836807379203`*^9, 3.6659837815456862`*^9, 3.6659840414585524`*^9, {
    3.6659841182589455`*^9, 3.6659841821535997`*^9}, 3.6660002671786103`*^9, {
-   3.666000702841529*^9, 3.6660007572636414`*^9}, 3.666000795290817*^9}],
+   3.666000702841529*^9, 3.6660007572636414`*^9}, 3.666000795290817*^9, {
+   3.667395085980611*^9, 3.667395122275384*^9}}],
 
 Cell[CellGroupData[{
 
@@ -429,9 +410,14 @@ Cell[BoxData[
  CellChangeTimes->{{3.6660007813190174`*^9, 3.6660008055054007`*^9}}]
 }, Open  ]]
 },
-WindowSize->{769, 873},
-WindowMargins->{{549, Automatic}, {-17, Automatic}},
-FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+WindowSize->{1440, 817},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.1999999999999, 841.8}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (February 25, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -446,29 +432,28 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 12932, 335, 1674, "Input"],
+Cell[580, 22, 12210, 316, 1334, "Input"],
 Cell[CellGroupData[{
-Cell[13537, 361, 137, 2, 23, "Print"],
-Cell[13677, 365, 134, 2, 23, "Print"],
-Cell[13814, 369, 113, 1, 23, "Print"],
-Cell[13930, 372, 115, 1, 23, "Print"],
-Cell[14048, 375, 131, 2, 23, "Print"],
-Cell[14182, 379, 113, 1, 23, "Print"],
-Cell[14298, 382, 132, 2, 23, "Print"],
-Cell[14433, 386, 134, 2, 23, "Print"],
-Cell[14570, 390, 135, 2, 23, "Print"],
-Cell[14708, 394, 135, 2, 23, "Print"],
-Cell[14846, 398, 116, 1, 23, "Print"],
-Cell[14965, 401, 113, 1, 23, "Print"],
-Cell[15081, 404, 129, 2, 23, "Print"],
-Cell[15213, 408, 115, 1, 23, "Print"],
-Cell[15331, 411, 134, 2, 23, "Print"],
-Cell[15468, 415, 132, 2, 23, "Print"]
+Cell[12815, 342, 137, 2, 23, "Print"],
+Cell[12955, 346, 134, 2, 23, "Print"],
+Cell[13092, 350, 113, 1, 23, "Print"],
+Cell[13208, 353, 115, 1, 23, "Print"],
+Cell[13326, 356, 131, 2, 23, "Print"],
+Cell[13460, 360, 113, 1, 23, "Print"],
+Cell[13576, 363, 132, 2, 23, "Print"],
+Cell[13711, 367, 134, 2, 23, "Print"],
+Cell[13848, 371, 135, 2, 23, "Print"],
+Cell[13986, 375, 135, 2, 23, "Print"],
+Cell[14124, 379, 116, 1, 23, "Print"],
+Cell[14243, 382, 113, 1, 23, "Print"],
+Cell[14359, 385, 129, 2, 23, "Print"],
+Cell[14491, 389, 115, 1, 23, "Print"],
+Cell[14609, 392, 134, 2, 23, "Print"],
+Cell[14746, 396, 132, 2, 23, "Print"]
 }, Open  ]],
-Cell[15615, 420, 376, 8, 64, "Output"]
+Cell[14893, 401, 376, 8, 31, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)
