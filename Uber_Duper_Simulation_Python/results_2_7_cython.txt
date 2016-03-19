@@ -1,0 +1,14 @@
+benchmark t_step = 1 
+ 0.0452074723264
+benchmark t_step = 0.1 
+ 0.44963241968
+benchmark t_step = 0.01 
+ 4.5148709508
+regular t_step = 1 
+ 0.091621503561
+regular t_step = 0.1 
+ 0.883127354506
+regular t_step = 0.01 
+ 8.81501643063
+test t_step = 0.1 
+ 0.851438665947

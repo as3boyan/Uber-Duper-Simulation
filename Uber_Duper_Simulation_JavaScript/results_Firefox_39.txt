@@ -1,0 +1,6 @@
+"benchmark" "t_step =" 1 "
+0.007 
+"benchmark" "t_step =" 0.1 "
+0.036 
+"benchmark" "t_step =" 0.01 "
+0.327

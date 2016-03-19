@@ -1,0 +1,8 @@
+"Main.hx:267: benchmark t_step = 1
+0.01399993896484375
+" UberDuperSimulationHaxe.js:2661:203
+"Main.hx:267: benchmark t_step = 0.1
+0.05800008773803711
+" UberDuperSimulationHaxe.js:2661:203
+"Main.hx:267: benchmark t_step = 0.01
+0.4609999656677246

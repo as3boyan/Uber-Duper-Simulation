@@ -1,0 +1,73 @@
+
+startMemory = MaxMemoryUsed[];
+
+R0=6378137;
+\[Mu]=3.9860047*10^14;
+
+h0=1000000;
+R=R0+h0;
+h[x_,y_]:=Sqrt[x^2+y^2]-R0
+T[R_]:=2*\[Pi]*Sqrt[R^3/\[Mu]]
+Vx0 = Sqrt[\[Mu]/R];
+Rcube[x_,y_]:= (Sqrt[x^2+y^2])^3;
+benchmarkTest[tStart_, tEnd_, tStep_, printOutput_]:=
+CompoundExpression[solution = First@NDSolve[
+{
+x'[t]==Vx[t],
+y'[t]==Vy[t], 
+Vx'[t]==-\[Mu]/Rcube[x[t],y[t]] * x[t], 
+Vy'[t]==-\[Mu]/Rcube[x[t],y[t]] * y[t], 
+x[0]==0, 
+y[0]==R,
+Vx[0]==Vx0, 
+Vy[0]==0
+},{x, y, Vx, Vy}, {t, 0, (tEnd-tStart)/tStep}];
+
+  table =Table[{t,x[t],y[t],Vx[t],Vy[t]},{t,tStart,tEnd, tStep}] /. solution;
+
+	If[printOutput, Export["D:\\Denis\\Uber_Duper_Simulation\\Uber_Duper_Simulation_Mathematica\\output.tr", table, "Table"], Null]]
+	
+
+
+steps = {1, 0.1, 0.01};
+
+times = ConstantArray[0, 6];
+
+For[i = 1, i<=Length[steps], i++,
+times[[i]]=First@AbsoluteTiming[benchmarkTest[0, 10000,steps[[i]],False]];
+(*times[[i+3]]=First@AbsoluteTiming[benchmarkTest[0, 10000,steps[[i]],True]];*)
+]
+
+times
+
+
+{0.917005,1.311644,13.189851,0,0,0}
+
+times
+Export["D:\\Denis\\Uber_Duper_Simulation\\Uber_Duper_Simulation_Mathematica\\results.txt", times, "Table"];
+{0.917005,1.311644,13.189851,0,0,0}
+
+maxMemory = MaxMemoryUsed[]
+
+638154872
+(*Vx[1000] /. solution;*)
+(*xData = Array[x /. solution, 10000];
+yData = Array[y /. solution, 10000];
+ListLinePlot[Table[{x , y} /. solution,{t,0,10000,1}],Frame\[Rule]True,Axes\[Rule]False];
+Table[{x , y} /. solution,{t,0,10000,1}];*)
+(**)
+(**)
+(*Plot[Evaluate[{x[t], y[t]} /. solution], {t, 0, 10000}];*)
+(**)
+
+startMemory
+maxMemory
+maxMemory - startMemory
+
+29550632
+638154872
+608604240
+N[(maxMemory - startMemory)/2^20]
+580.41
+MemoryInUse[]
+198141736

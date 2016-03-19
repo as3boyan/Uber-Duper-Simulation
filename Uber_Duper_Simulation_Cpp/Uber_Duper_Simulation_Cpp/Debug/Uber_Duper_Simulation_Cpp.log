@@ -1,0 +1,33 @@
+﻿Сборка начата 21.12.2015 15:01:09.
+     1>Проект "D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\Uber_Duper_Simulation_Cpp.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp Uber_Duper_Simulation_Cpp.cpp
+         Uber_Duper_Simulation_Cpp.cpp
+     1>d:\denis\uber_duper_simulation\uber_duper_simulation_cpp\uber_duper_simulation_cpp\uber_duper_simulation_cpp.cpp(83): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234): см. объявление "fopen"
+     1>d:\denis\uber_duper_simulation\uber_duper_simulation_cpp\uber_duper_simulation_cpp\uber_duper_simulation_cpp.cpp(186): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234): см. объявление "fopen"
+         stdafx.cpp
+         Создание кода...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Uber_Duper_Simulation_Cpp.exe.embed.manifest.res" Debug\Uber_Duper_Simulation_Cpp_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Debug\Uber_Duper_Simulation_Cpp.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Uber_Duper_Simulation_Cpp.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Debug\Uber_Duper_Simulation_Cpp.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Debug\Uber_Duper_Simulation_Cpp.lib" /MACHINE:X86 Debug\Uber_Duper_Simulation_Cpp.exe.embed.manifest.res
+         Debug\stdafx.obj
+         Debug\Uber_Duper_Simulation_Cpp.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Uber_Duper_Simulation_Cpp.exe.embed.manifest" /manifest Debug\Uber_Duper_Simulation_Cpp.exe.intermediate.manifest
+         Для всех выходных данных обновления не требуется.
+       LinkEmbedManifest:
+         Для всех выходных данных обновления не требуется.
+         Uber_Duper_Simulation_Cpp.vcxproj -> D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Debug\Uber_Duper_Simulation_Cpp.exe
+       FinalizeBuildStatus:
+         Файл "Debug\Uber_Duper_Simulation_Cpp.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\Uber_Duper_Simulation_Cpp.lastbuildstate".
+     1>Построение проекта "D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:04.05

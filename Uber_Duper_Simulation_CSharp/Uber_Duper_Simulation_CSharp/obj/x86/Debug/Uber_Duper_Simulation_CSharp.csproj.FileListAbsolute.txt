@@ -1,0 +1,10 @@
+C:\Users\Днепр\AppData\Local\Temporary Projects\Uber_Duper_Simulation_CSharp\bin\Debug\Uber_Duper_Simulation_CSharp.exe
+C:\Users\Днепр\AppData\Local\Temporary Projects\Uber_Duper_Simulation_CSharp\bin\Debug\Uber_Duper_Simulation_CSharp.pdb
+C:\Users\Днепр\AppData\Local\Temporary Projects\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.exe
+C:\Users\Днепр\AppData\Local\Temporary Projects\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.pdb
+D:\Denis\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.exe
+D:\Denis\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.pdb
+D:\Denis\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\bin\Debug\Uber_Duper_Simulation_CSharp.exe
+D:\Denis\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\bin\Debug\Uber_Duper_Simulation_CSharp.pdb
+D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.exe
+D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_CSharp\Uber_Duper_Simulation_CSharp\obj\x86\Debug\Uber_Duper_Simulation_CSharp.pdb

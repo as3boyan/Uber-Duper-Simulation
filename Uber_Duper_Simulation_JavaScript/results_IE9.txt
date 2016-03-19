@@ -1,0 +1,6 @@
+Журнал: benchmarkt_step =1
+0.021 
+Журнал: benchmarkt_step =0.1
+0.198 
+Журнал: benchmarkt_step =0.01
+2.044

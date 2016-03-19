@@ -1,0 +1,17 @@
+﻿Сборка начата 23.12.2015 17:40:55.
+     1>Проект "D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Release\Uber_Duper_Simulation_Cpp.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         Для всех выходных данных обновления не требуется.
+         Uber_Duper_Simulation_Cpp.vcxproj -> D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Release\Uber_Duper_Simulation_Cpp.exe
+       FinalizeBuildStatus:
+         Файл "Release\Uber_Duper_Simulation_Cpp.unsuccessfulbuild" удаляется.
+         Обращение к "Release\Uber_Duper_Simulation_Cpp.lastbuildstate".
+     1>Построение проекта "D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp\Uber_Duper_Simulation_Cpp.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:01.17

@@ -1,0 +1,6 @@
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\bin\Debug\Uber_Duper_Simulation_FSharp.XML
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\bin\Debug\Uber_Duper_Simulation_FSharp.exe
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\bin\Debug\Uber_Duper_Simulation_FSharp.pdb
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\obj\x86\Debug\Uber_Duper_Simulation_FSharp.fsprojResolveAssemblyReference.cache
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\obj\x86\Debug\Uber_Duper_Simulation_FSharp.exe
+D:\Denis\Uber_Duper_Simulation_FSharp\Uber_Duper_Simulation_FSharp\obj\x86\Debug\Uber_Duper_Simulation_FSharp.pdb

@@ -1,0 +1,50 @@
+Chrome 44
+
+benchmark t_step = 1 
+ 0.008
+benchmark t_step = 0.1 
+ 0.017
+benchmark t_step = 0.01 
+ 0.134
+
+Firefox 39
+"benchmark" "t_step =" 1 "
+" 0.007 main.js:155:5
+"benchmark" "t_step =" 0.1 "
+" 0.036 main.js:155:5
+"benchmark" "t_step =" 0.01 "
+" 0.327
+
+IE9
+
+Журнал: benchmarkt_step =1
+0.021 
+Журнал: benchmarkt_step =0.1
+0.198 
+Журнал: benchmarkt_step =0.01
+2.044 
+
+
+Haxe/JavaScript
+
+Chrome 44
+Main.hx:267: benchmark t_step = 1
+0.006000041961669922
+
+UberDuperSimulationHaxe.js:2661 Main.hx:267: benchmark t_step = 0.1
+0.01900005340576172
+
+UberDuperSimulationHaxe.js:2661 Main.hx:267: benchmark t_step = 0.01
+0.17100000381469727
+
+Firefox 39
+
+"Main.hx:267: benchmark t_step = 1
+0.01399993896484375
+" UberDuperSimulationHaxe.js:2661:203
+"Main.hx:267: benchmark t_step = 0.1
+0.05800008773803711
+" UberDuperSimulationHaxe.js:2661:203
+"Main.hx:267: benchmark t_step = 0.01
+0.4609999656677246
+"

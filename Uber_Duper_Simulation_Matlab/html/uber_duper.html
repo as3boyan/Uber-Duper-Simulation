@@ -1,0 +1,246 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>uber_duper</title>
+      <meta name="generator" content="MATLAB 7.6">
+      <meta name="date" content="2015-12-23">
+      <meta name="m-file" content="uber_duper"><style>
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content"><pre class="codeinput"><span class="keyword">function</span> z = uber_duper()
+cd <span class="string">'D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Matlab'</span>
+
+steps = [1, 0.1, 0.01];
+
+results = zeros(6, 1);
+<span class="keyword">for</span> x = 1:3
+    results(x) = run_calculation_and_measure_time(0, 10000, steps(x), false);
+    results(x + 3) = run_calculation_and_measure_time(0, 10000, steps(x), true);
+<span class="keyword">end</span>
+
+save <span class="string">results.txt</span> <span class="string">results</span> <span class="string">-ascii</span>
+
+results
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> main = main(p_t_start, p_t_end, p_t_step, p_printOutput)
+t_end = p_t_end;  <span class="comment">% &#1050;&#1086;&#1085;&#1077;&#1094; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1076;&#1074;&#1080;&#1078;&#1077;&#1085;&#1080;&#1103;</span>
+t_step = p_t_step;  <span class="comment">% &#1064;&#1072;&#1075; &#1080;&#1085;&#1090;&#1077;&#1075;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1080;&#1103;</span>
+h0 = 1000000;
+R0 = 6378137.0;
+mu = 3.9860047e14;
+R = R0 + h0;
+
+t = p_t_start;
+x = 0;
+y = R;
+Vx = sqrt(mu / R);
+Vy = 0;
+
+times = t:t_step:t_end;
+n = length(times);
+
+<span class="comment">% &#1048;&#1085;&#1090;&#1077;&#1075;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1080;&#1103; &#1084;&#1077;&#1090;&#1086;&#1076;&#1086;&#1084; &#1056;&#1091;&#1085;&#1075;&#1077;-&#1050;&#1091;&#1090;&#1090;&#1072; (4-&#1075;&#1086; &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1072;)</span>
+options = odeset(<span class="string">'RelTol'</span>,1e-10,<span class="string">'AbsTol'</span>,[1e-10 1e-10 1e-10 1e-10]);
+[T,Y] = ode45(@integrate, times, [x y Vx Vy], options);
+
+<span class="keyword">if</span> p_printOutput
+c = [T, Y];
+save <span class="string">output.tr</span> <span class="string">c</span> <span class="string">-ascii</span>
+<span class="keyword">end</span>
+
+<span class="comment">%plot (Y(1:n,1),Y(1:n,2));</span>
+<span class="comment">%figure(gcf)</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> z = run_calculation_and_measure_time(p_t_start, p_t_end, p_t_step, p_printOutput)
+tic;
+main(p_t_start, p_t_end, p_t_step, p_printOutput);
+z = toc;
+<span class="keyword">end</span>
+
+<span class="comment">% &#1055;&#1088;&#1072;&#1074;&#1099;&#1077; &#1095;&#1072;&#1089;&#1090;&#1080;</span>
+<span class="keyword">function</span> dy = integrate(t,y)
+mu = 3.9860047e14;
+
+R = sqrt(y(1) * y(1) + y(2) * y(2));
+R3 = R^3;
+
+dy = zeros(4,1);    <span class="comment">% a column vector</span>
+
+dy(1) = y(3);
+dy(2) = y(4);
+dy(3) = -mu / R3 * y(1);
+dy(4) = -mu / R3 * y(2);
+<span class="keyword">end</span>
+
+<span class="comment">% &#1056;&#1072;&#1089;&#1095;&#1077;&#1090; &#1090;&#1077;&#1082;&#1091;&#1097;&#1077;&#1081; &#1074;&#1099;&#1089;&#1086;&#1090;&#1099;</span>
+<span class="keyword">function</span> a = h_x_y(x,y)
+R0 = 6378137.0;
+a = sqrt(x^2 + y^2) - R0;
+<span class="keyword">end</span>
+
+<span class="comment">% &#1056;&#1072;&#1089;&#1095;&#1077;&#1090; &#1087;&#1077;&#1088;&#1080;&#1086;&#1076;&#1072; &#1086;&#1073;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1103;</span>
+<span class="keyword">function</span> a = T(R)
+a = 2 * pi * sqrt(R^3 / mu);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+results =
+
+    0.5729
+    1.3872
+   19.9049
+    0.2268
+    1.7881
+   24.3604
+
+</pre><p class="footer"><br>
+            Published with MATLAB&reg; 7.6<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+function z = uber_duper()
+cd 'D:\Denis\Uber_Duper_Simulation\Uber_Duper_Simulation_Matlab'
+
+steps = [1, 0.1, 0.01];
+
+results = zeros(6, 1);
+for x = 1:3
+    results(x) = run_calculation_and_measure_time(0, 10000, steps(x), false);
+    results(x + 3) = run_calculation_and_measure_time(0, 10000, steps(x), true);
+end
+
+save results.txt results -ascii
+
+results
+end
+
+function main = main(p_t_start, p_t_end, p_t_step, p_printOutput)
+t_end = p_t_end;  % Конец времени движения
+t_step = p_t_step;  % Шаг интегрирования
+h0 = 1000000;
+R0 = 6378137.0;
+mu = 3.9860047e14;
+R = R0 + h0;
+
+t = p_t_start;
+x = 0;
+y = R;
+Vx = sqrt(mu / R);
+Vy = 0;
+
+times = t:t_step:t_end;
+n = length(times);
+
+% Интегрированния методом Рунге-Кутта (4-го порядка)
+options = odeset('RelTol',1e-10,'AbsTol',[1e-10 1e-10 1e-10 1e-10]);
+[T,Y] = ode45(@integrate, times, [x y Vx Vy], options);
+
+if p_printOutput
+c = [T, Y];
+save output.tr c -ascii
+end
+
+%plot (Y(1:n,1),Y(1:n,2));
+%figure(gcf)
+end
+
+function z = run_calculation_and_measure_time(p_t_start, p_t_end, p_t_step, p_printOutput)
+tic;
+main(p_t_start, p_t_end, p_t_step, p_printOutput);
+z = toc;
+end
+
+% Правые части
+function dy = integrate(t,y)
+mu = 3.9860047e14;
+
+R = sqrt(y(1) * y(1) + y(2) * y(2));
+R3 = R^3;
+
+dy = zeros(4,1);    % a column vector
+
+dy(1) = y(3);
+dy(2) = y(4);
+dy(3) = -mu / R3 * y(1);
+dy(4) = -mu / R3 * y(2);
+end
+
+% Расчет текущей высоты
+function a = h_x_y(x,y)
+R0 = 6378137.0;
+a = sqrt(x^2 + y^2) - R0;
+end
+
+% Расчет периода обращения
+function a = T(R)
+a = 2 * pi * sqrt(R^3 / mu);
+end
+
+##### SOURCE END #####
+-->
+   </body>
+</html>
